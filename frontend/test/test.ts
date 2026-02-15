@@ -1,1 +1,2 @@
-console.log("test data Austinbranch to main")
+export{}
+const kpdwajpdjwa :string ="damw"
