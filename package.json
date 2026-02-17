@@ -13,12 +13,12 @@
     }
   ],
   "contributors 2": [
-  {
-    "fullname": "Patsaraporn Phadungsil",
-    "username": "patsaporn-phadungsil",
-    "studentId": "68010852"
-  }
-],
+    {
+      "fullname": "Patsaraporn Phadungsil",
+      "username": "patsaporn-phadungsil",
+      "studentId": "68010852"
+    }
+  ],
   "project": {
     "model": {
       "id": 4,

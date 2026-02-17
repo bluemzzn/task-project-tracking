@@ -1,12 +1,14 @@
-enum Type{
+export enum Type{
     TASKS = 'tasks',
     PROJECT = 'projects',
 }
 
-enum Status{
+export enum Status{
     DONE = 'done',
     IN_PROGRESS = 'in_progress',
 }
+
+export type projectStatus = 'Plaining' | 'Completed' | 'Archived';
 
 export interface TasksData{
     taskId: string,
@@ -18,12 +20,14 @@ export interface TasksData{
 }
 
 export interface ProjectData{
-    projectName: string,
-    projectId: string,
-    type: Type,
-    subTasks: TasksData[],
-    projectStartDate: string,
-    projectDeadline: string,
-    projectStatus: number,
-    isProjectOverdue: boolean,
+    type: Type.PROJECT;
+    name: string;
+    id: number;
+    title : string;
+    description : string;
+    status : projectStatus;
+    startAt: string;
+    deadline: string;
+    isOverdue: boolean;
+    subTasks: TasksData[];
 }
