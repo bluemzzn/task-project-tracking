@@ -13,12 +13,12 @@
     }
   ],
   "contributors 2": [
-  {
-    "fullname": "Patsaraporn Phadungsil",
-    "username": "patsaporn-phadungsil",
-    "studentId": "68010852"
-  }
-],
+    {
+      "fullname": "Patsaraporn Phadungsil",
+      "username": "patsaporn-phadungsil",
+      "studentId": "68010852"
+    }
+  ],
   "project": {
     "model": {
       "id": 4,
@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
+    "@nestjs/mapped-types": "^2.1.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
     "@types/express": "^4.17.17",
