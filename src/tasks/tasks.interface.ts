@@ -1,9 +1,9 @@
-enum Type{
+export enum Type{
     TASKS = 'tasks',
     PROJECT = 'projects',
 }
 
-enum Status{
+export enum Status{
     DONE = 'done',
     IN_PROGRESS = 'in_progress',
 }
