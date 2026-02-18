@@ -1,20 +1,40 @@
-export enum Type {
-  TASKS = "tasks",
-  PROJECT = "projects",
-}
+import { ProjectData, projectStatus, TasksData, Type } from '@/tasks/tasks.interface';
+import { IsEnum, IsString, IsBoolean, IsArray, IsNumber , IsNotEmpty} from 'class-validator';
 
-export type projectStatus = "Plainning" | "Completed" | "Archived";
 
 export class CreateProjectDto implements ProjectData {
-  IsEnum();
-  type: Type.PROJECT;
-  name: string;
-  id: number;
-  title: string;
-  description: string;
-  status: projectStatus;
-  startAt: string;
-  deadline: string;
-  isOverdue: boolean;
-  subTasks: TasksData[];
+  @IsEnum(Type)
+  @IsNotEmpty()
+  type!: Type.PROJECT;
+
+  @IsString()
+  @IsNotEmpty()
+  name!: string;
+
+  @IsNotEmpty()
+  @IsNumber()
+  id!: number;
+
+  @IsString()
+  @IsNotEmpty()
+  title!: string;
+  
+  @IsString()
+  description!: string;
+    
+  @IsNotEmpty()
+  @IsEnum(['Planning' , 'Completed' , 'Archived'])
+  status!: projectStatus;
+
+  @IsString()
+  startAt!: string;
+
+  @IsString()
+  deadline!: string;
+
+  @IsBoolean()
+  isOverdue!: boolean;
+
+  @IsArray()
+  subTasks!: TasksData[];
 }
