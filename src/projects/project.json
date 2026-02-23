@@ -1,0 +1,90 @@
+{ "project":
+ [ 
+  {
+    "type": "projects",
+    "name": "Website Redesign",
+    "id": 1,
+    "title": "Corporate Website Redesign 2024",
+    "description": "A complete overhaul of the corporate website.",
+    "status": "Planning",
+    "startAt": "2024-01-15",
+    "deadline": "2024-06-30",
+    "isOverdue": false,
+    "subTasks": [
+      {
+        "taskId": "task_001",
+        "tasksName": "Wireframe Design",
+        "startDate": "2024-01-15",
+        "deadline": "2024-02-01",
+        "status": "done",
+        "isOverdue": false
+      },
+      {
+        "taskId": "task_002",
+        "tasksName": "Frontend Development",
+        "startDate": "2024-02-02",
+        "deadline": "2024-04-15",
+        "status": "in_progress",
+        "isOverdue": true
+      }
+    ]
+  },
+  {
+    "type": "projects",
+    "name": "Mobile App",
+    "id": 2,
+    "title": "E-Commerce Mobile App",
+    "description": "Building a cross-platform mobile app for e-commerce.",
+    "status": "Completed",
+    "startAt": "2023-06-01",
+    "deadline": "2023-12-31",
+    "isOverdue": false,
+    "subTasks": [
+      {
+        "taskId": "task_003",
+        "tasksName": "UI Design",
+        "startDate": "2023-06-01",
+        "deadline": "2023-07-01",
+        "status": "done",
+        "isOverdue": false
+      },
+      {
+        "taskId": "task_004",
+        "tasksName": "Payment Integration",
+        "startDate": "2023-09-01",
+        "deadline": "2023-10-01",
+        "status": "done",
+        "isOverdue": false
+      }
+    ]
+  },
+  {
+    "type": "projects",
+    "name": "CRM System",
+    "id": 3,
+    "title": "Internal CRM System",
+    "description": "Developing an internal CRM for the sales team.",
+    "status": "Archived",
+    "startAt": "2023-01-01",
+    "deadline": "2023-05-01",
+    "isOverdue": true,
+    "subTasks": [
+      {
+        "taskId": "task_005",
+        "tasksName": "Database Schema",
+        "startDate": "2023-01-01",
+        "deadline": "2023-02-01",
+        "status": "done",
+        "isOverdue": false
+      },
+      {
+        "taskId": "task_006",
+        "tasksName": "Reporting Module",
+        "startDate": "2023-03-01",
+        "deadline": "2023-04-01",
+        "status": "in_progress",
+        "isOverdue": true
+      }
+    ]
+  }
+]}
