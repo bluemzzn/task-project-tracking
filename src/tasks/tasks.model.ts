@@ -1,6 +1,6 @@
 import { TasksData } from "./tasks.interface";
 
-class Task implements TasksData{
+export class Task implements TasksData{
     public readonly id: string;
 
     constructor(
@@ -71,6 +71,10 @@ class Task implements TasksData{
 
     public updatePriority(): void{
         this.priority = this.calculatePriority();
+    }
+
+    public toggleDelete(): void{
+        this.statusDelete = this.statusDelete === "ACTIVE" ? "INACTIVE" : "ACTIVE";
     }
 
     public updateTask(data: Partial<TasksData>): void{
