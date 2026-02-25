@@ -32,12 +32,14 @@ export interface TasksData{
 export interface ProjectData {
   type: Type.PROJECT;
   name: string;
-  id: string;
+  id: number;
   title: string;
   description: string;
   status: projectStatus;
-  startAt: string;
-  deadline: string;
-  isOverdue: boolean;
+  startAt: Date;
+  deadline: Date;
+  createdAt : Date;
+  updatedAt : Date;
+  statusDelete: "ACTIVE" | "INACTIVE"
   subTasks: TasksData[];
 }
