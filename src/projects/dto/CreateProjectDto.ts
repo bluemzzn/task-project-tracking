@@ -1,4 +1,4 @@
-import { ProjectData, projectStatus, TasksData, Type } from '@/tasks/tasks.interface';
+import { ProjectData, projectStatus, TasksData, Type } from '@/common/tasks.interface';
 import { IsEnum, IsString, IsBoolean, IsArray, IsNumber , IsNotEmpty} from 'class-validator';
 
 

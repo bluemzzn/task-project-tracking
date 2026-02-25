@@ -14,13 +14,19 @@ export enum projectStatus {
   Archived = "Archived",
 }
 
-export interface TasksData {
-  taskId: string;
-  tasksName: string;
-  startDate: string;
-  deadline: string;
-  status: Status;
-  isOverdue: boolean;
+export interface TasksData{
+    name: string,
+    id: string,
+    title: string,
+    description: string,
+    priority: "LOW" | "MEDIUM" | "HIGH",
+    startDate: Date,
+    deadline: Date,
+    estimatedHours: number,
+    status: "IN_PROGRESS" | "DONE",
+    startedAt: Date,
+    updatedAt: Date,
+    statusDelete: "ACTIVE" | "INACTIVE",
 }
 
 export interface ProjectData {
