@@ -1,4 +1,4 @@
-import { ProjectData, projectStatus, TasksData, Type } from "@/tasks/tasks.interface";
+import { ProjectData, projectStatus, TasksData, Type } from "@/common/tasks.interface";
 
 export class ProjectEntities implements ProjectData{
     constructor(

@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { Task } from "./tasks.model";
-import { TasksData, ProjectData, Type, Status } from "./tasks.interface";
+import { TasksData, ProjectData, Type, Status } from "../common/tasks.interface";
 import dataFile from '../data/data.json';
 
 @Injectable()

@@ -1,4 +1,4 @@
-import { TasksData, ProjectData, Status, Type } from "./tasks.interface";
+import { TasksData, ProjectData, Status, Type } from "../common/tasks.interface";
 import { Injectable } from '@nestjs/common';
 
 export class Task implements TasksData{
