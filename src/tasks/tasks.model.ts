@@ -1,4 +1,4 @@
-import { TasksData } from "../common/tasks.interface";
+import { TasksData} from "../common/tasks.interface";
 
 export class Task implements TasksData{
     public readonly id: string;
