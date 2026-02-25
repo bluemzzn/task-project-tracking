@@ -1,0 +1,127 @@
+{
+  "project": [
+    {
+      "type": "projects",
+      "name": "Website Redesign",
+      "id": 1,
+      "title": "Corporate Website Redesign 2024",
+      "description": "A complete overhaul of the corporate website.",
+      "status": "Planning",
+      "startAt": "2024-01-15",
+      "deadline": "2024-06-30",
+      "isOverdue": false,
+      "subTasks": [
+        {
+          "id": "task_1708730000000_abcd123",
+          "name": "Setup Backend",
+          "title": "Initialize NestJS Project",
+          "description": "Create project structure and configure modules",
+          "priority": "LOW",
+          "startDate": "2026-02-20T09:00:00.000Z",
+          "deadline": "2026-03-01T18:00:00.000Z",
+          "estimatedHours": 10,
+          "status": "DONE",
+          "startedAt": "2026-02-20T09:00:00.000Z",
+          "updatedAt": "2026-02-22T10:00:00.000Z",
+          "statusDelete": "ACTIVE"
+        },
+        {
+          "id": "task_1708730000001_efgh456",
+          "name": "Implement Task Model",
+          "title": "Create Task Class",
+          "description": "Define properties and business logic",
+          "priority": "MEDIUM",
+          "startDate": "2026-02-21T09:00:00.000Z",
+          "deadline": "2026-02-27T18:00:00.000Z",
+          "estimatedHours": 8,
+          "status": "IN_PROGRESS",
+          "startedAt": "2026-02-21T09:00:00.000Z",
+          "updatedAt": "2026-02-23T12:00:00.000Z",
+          "statusDelete": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "type": "projects",
+      "name": "Mobile App",
+      "id": 2,
+      "title": "E-Commerce Mobile App",
+      "description": "Building a cross-platform mobile app for e-commerce.",
+      "status": "Completed",
+      "startAt": "2023-06-01",
+      "deadline": "2023-12-31",
+      "isOverdue": false,
+      "subTasks": [
+        {
+          "id": "task_1708730000002_ijkl789",
+          "name": "Add JSON Persistence",
+          "title": "File System Storage",
+          "description": "Save and load tasks from JSON file",
+          "priority": "HIGH",
+          "startDate": "2026-02-22T09:00:00.000Z",
+          "deadline": "2026-02-25T18:00:00.000Z",
+          "estimatedHours": 6,
+          "status": "IN_PROGRESS",
+          "startedAt": "2026-02-22T09:00:00.000Z",
+          "updatedAt": "2026-02-24T08:00:00.000Z",
+          "statusDelete": "ACTIVE"
+        },
+        {
+          "id": "task_1708730000002_ijkl789",
+          "name": "Add JSON Persistence",
+          "title": "File System Storage",
+          "description": "Save and load tasks from JSON file",
+          "priority": "HIGH",
+          "startDate": "2026-02-22T09:00:00.000Z",
+          "deadline": "2026-02-25T18:00:00.000Z",
+          "estimatedHours": 6,
+          "status": "IN_PROGRESS",
+          "startedAt": "2026-02-22T09:00:00.000Z",
+          "updatedAt": "2026-02-24T08:00:00.000Z",
+          "statusDelete": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "type": "projects",
+      "name": "CRM System",
+      "id": 3,
+      "title": "Internal CRM System",
+      "description": "Developing an internal CRM for the sales team.",
+      "status": "Archived",
+      "startAt": "2023-01-01",
+      "deadline": "2023-05-01",
+      "isOverdue": true,
+      "subTasks": [
+        {
+          "id": "task_1708730000002_ijkl789",
+          "name": "Add JSON Persistence",
+          "title": "File System Storage",
+          "description": "Save and load tasks from JSON file",
+          "priority": "HIGH",
+          "startDate": "2026-02-22T09:00:00.000Z",
+          "deadline": "2026-02-25T18:00:00.000Z",
+          "estimatedHours": 6,
+          "status": "IN_PROGRESS",
+          "startedAt": "2026-02-22T09:00:00.000Z",
+          "updatedAt": "2026-02-24T08:00:00.000Z",
+          "statusDelete": "ACTIVE"
+        },
+        {
+          "id": "task_1708730000002_ijkl789",
+          "name": "Add JSON Persistence",
+          "title": "File System Storage",
+          "description": "Save and load tasks from JSON file",
+          "priority": "HIGH",
+          "startDate": "2026-02-22T09:00:00.000Z",
+          "deadline": "2026-02-25T18:00:00.000Z",
+          "estimatedHours": 6,
+          "status": "IN_PROGRESS",
+          "startedAt": "2026-02-22T09:00:00.000Z",
+          "updatedAt": "2026-02-24T08:00:00.000Z",
+          "statusDelete": "ACTIVE"
+        }
+      ]
+    }
+  ]
+}

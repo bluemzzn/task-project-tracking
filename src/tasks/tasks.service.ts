@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { Task } from "./tasks.model";
-import { TasksData } from "./tasks.interface";
+import { TasksData } from "../common/tasks.interface";
 import dataFile from "../data/data.json";
 import { CreateTaskDto } from "./dto/create-task.dto";
 import * as fs from "fs";

@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Patch, Delete, Body, Param, Query } from "@nestjs/common";
 import { TasksService } from "./tasks.service";
-import { TasksData } from "./tasks.interface";
+import { TasksData } from "../common/tasks.interface";
 import { CreateTaskDto } from "./dto/create-task.dto";
 
 
