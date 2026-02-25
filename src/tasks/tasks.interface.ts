@@ -12,7 +12,7 @@ export interface TasksData{
     startDate: Date,
     deadline: Date,
     estimatedHours: number,
-    status: "TODO" | "IN_PROGRESS" | "DONE" | "CANCELED",
+    status: "IN_PROGRESS" | "DONE",
     startedAt: Date,
     updatedAt: Date,
     statusDelete: "ACTIVE" | "INACTIVE",
