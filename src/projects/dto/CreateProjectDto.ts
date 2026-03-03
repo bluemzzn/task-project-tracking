@@ -11,9 +11,10 @@ import {
   IsArray,
   IsNumber,
   IsNotEmpty,
+  IsOptional,
 } from "class-validator";
 
-export class CreateProjectDto implements ProjectData {
+export class CreateProjectDto {
   @IsEnum(Type)
   @IsNotEmpty()
   @ApiProperty({ example: "PROJECT" })
@@ -24,10 +25,10 @@ export class CreateProjectDto implements ProjectData {
   @ApiProperty({ example: "John Doe" })
   name!: string;
 
-  @IsNotEmpty()
-  @IsNumber()
-  @ApiProperty({ example: 1 })
-  id!: number;
+  // @IsNotEmpty()
+  // @IsNumber()
+  // @ApiProperty({ example: 1 })
+  // id!: number;
 
   @IsString()
   @IsNotEmpty()
@@ -39,31 +40,15 @@ export class CreateProjectDto implements ProjectData {
   description!: string;
 
   @IsNotEmpty()
-  @IsEnum(["Planning", "Completed", "Archived"])
+  @IsEnum(projectStatus)
   @ApiProperty({ example: "Planning" })
   status!: projectStatus;
 
-  @IsString()
-  @ApiProperty({ example: "2026-02-24T09:00:00.000Z" })
-  startAt!: Date;
-
-  @IsString()
-  @ApiProperty({ example: "2026-02-24T09:00:00.000Z" })
-  deadline!: Date;
- 
-  @IsString()
-  @ApiProperty({ example: "2026-02-24T09:00:00.000Z" })
-  createdAt!: Date;
- 
-  @IsString()
-  @ApiProperty({ example: "2026-02-24T09:00:00.000Z" })
-  updatedAt!: Date;
-
-  @IsNotEmpty()
-  @IsEnum({ ACTIVE: "INACTIVE" })
-  @ApiProperty({ enum: ["ACTIVE", "INACTIVE"], example: "INACTIVE" })
-  statusDelete!: "ACTIVE" | "INACTIVE";
-
   @IsArray()
-  subTasks!: TasksData[];
+  @IsOptional()
+  @ApiProperty({
+    example: ["task_1708730000000_abcd123"],
+    required: false,
+  })
+  taskIds?: string[];
 }

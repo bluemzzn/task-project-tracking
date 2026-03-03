@@ -40,6 +40,6 @@ export interface ProjectData {
   deadline: Date;
   createdAt : Date;
   updatedAt : Date;
-  statusDelete: "ACTIVE" | "INACTIVE"
-  subTasks: TasksData[];
+  statusDelete: "ACTIVE" | "INACTIVE";
+  taskIds : string[];
 }

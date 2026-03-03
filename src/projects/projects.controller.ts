@@ -12,7 +12,7 @@ export class ProjectsController {
 
   @Get()
   getAllProject() {
-    return this.projectsService.getAllData()
+    return this.projectsService.getAllProjects()
   }
 
   @Get(":id")

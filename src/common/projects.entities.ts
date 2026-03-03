@@ -1,7 +1,6 @@
 import {
   ProjectData,
   projectStatus,
-  TasksData,
   Type,
 } from "@/common/tasks.interface";
 
@@ -17,8 +16,8 @@ export class ProjectEntities implements ProjectData {
     public deadline: Date,
     public createdAt: Date,
     public updatedAt: Date,
-    public statusDelete : "ACTIVE" | "INACTIVE",
-    public subTasks: TasksData[],
+    public statusDelete: "ACTIVE" | "INACTIVE",
+    public taskIds: string[],
   ) {}
 
   static create(data: Partial<ProjectData>): ProjectEntities {
@@ -35,15 +34,7 @@ export class ProjectEntities implements ProjectData {
       data.createdAt ?? now,
       data.updatedAt ?? now,
       data.statusDelete || "ACTIVE",
-      data.subTasks || [],
+      data.taskIds ?? [],
     );
-  }
-
-  private static checkOverdue(deadline: string): boolean {
-    if (!deadline) {
-      return false;
-    } else {
-      return new Date(deadline) < new Date();
-    }
   }
 }
