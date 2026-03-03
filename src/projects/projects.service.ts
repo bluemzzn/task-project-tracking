@@ -2,38 +2,54 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import projectDataJson from "../data/project.json";
 import { CreateProjectDto } from "./dto/CreateProjectDto";
 import { UpdateProjectDto } from "./dto/UpdateProjectDto";
-import { ProjectData } from "@/common/tasks.interface";
-// import { DatabaseService } from "./database.service";
+import { ProjectData, Type } from "@/common/tasks.interface";
+import { ProjectEntities } from "@/common/projects.entities";
+import { TasksService } from "@/tasks/tasks.service";
 
 @Injectable()
 export class ProjectsService {
-    private projects = projectDataJson;
+  private projects: ProjectData[] = (projectDataJson as any[]).map(
+    (pj) =>
+      new ProjectEntities(
+        Type.PROJECT,
+        pj.name,
+        pj.id,
+        pj.title,
+        pj.description,
+        pj.status,
+        new Date(pj.startAt),
+        new Date(pj.deadline),
+        new Date(pj.createdAt),
+        new Date(pj.updatedAt),
+        pj.statusDelete,
+        pj.taskId,
+      ),
+  );
 
-    //  constructor(private readonly DatabaseService : DatabaseService){}
+  constructor(private readonly taskService: TasksService) {}
 
-    async getAllData(){
-        return this.projects;
+  getAllProjects(): ProjectData[] {
+    return this.projects.filter((pj) => pj.statusDelete === "ACTIVE");
+  }
+
+  getProjectbyId(id: number) {
+    const projectAdd = this.projects.find(
+      (p) => p.id === id && p.statusDelete === "ACTIVE",
+    );
+
+    if (!projectAdd) {
+      throw new NotFoundException("Project Not Found");
     }
 
-    async getProjectbyId(id: number){
-        //  const project = this.projects.find(project => project.id === id)
+    const subTasks = projectAdd.taskIds.map((taskId) =>
+      this.taskService.getTasksById(taskId),
+    );
+    return { ...projectAdd, subTasks };
+  }
 
-        //  if(!project){
-        //      throw new NotFoundException('Project Not Found');
-        //  }
-        //  return project;
-    }
+  createProject(createProjectDto: CreateProjectDto) {}
 
-    async createProject(createProjectDto : CreateProjectDto){
-    
-    }
+  updateProject(id: number, updateProjectDto: UpdateProjectDto) {}
 
-    async updateProject(id : number, updateProjectDto : UpdateProjectDto){
-    
-    }
-
-    async deleteProject(id : number){
-    
-    }
+  deleteProject(id: number) {}
 }
-
