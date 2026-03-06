@@ -1,7 +1,5 @@
 import {
-  ProjectData,
   projectStatus,
-  TasksData,
   Type,
 } from "@/common/tasks.interface";
 import { ApiProperty } from "@nestjs/swagger";
@@ -25,11 +23,6 @@ export class CreateProjectDto {
   @ApiProperty({ example: "John Doe" })
   name!: string;
 
-  // @IsNotEmpty()
-  // @IsNumber()
-  // @ApiProperty({ example: 1 })
-  // id!: number;
-
   @IsString()
   @IsNotEmpty()
   @ApiProperty({ example: "Task Management" })
@@ -44,11 +37,18 @@ export class CreateProjectDto {
   @ApiProperty({ example: "Planning" })
   status!: projectStatus;
 
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty({ example: "2024-01-15T08:00:00.000Z" })
+  startAt!: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty({ example: "2024-06-30T17:00:00.000Z" })
+  deadline!: string;
+
   @IsArray()
   @IsOptional()
-  @ApiProperty({
-    example: ["task_1708730000000_abcd123"],
-    required: false,
-  })
+  @ApiProperty({example: ["task_1708730000000_abcd123"]})
   taskIds?: string[];
 }

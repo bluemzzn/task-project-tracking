@@ -68,5 +68,19 @@
     "startedAt": "2026-02-20T09:00:00.000Z",
     "updatedAt": "2026-02-24T06:00:00.000Z",
     "statusDelete": "INACTIVE"
+  },
+  {
+    "id": "task_1772813695656_g4jvo5f",
+    "name": "Test",
+    "title": "sdfsdf",
+    "description": "This is the test one",
+    "priority": "HIGH",
+    "startDate": "2026-02-20T09:00:00.000Z",
+    "deadline": "2026-03-05T18:00:00.000Z",
+    "estimatedHours": 5,
+    "status": "IN_PROGRESS",
+    "startedAt": "2026-02-20T09:00:00.000Z",
+    "updatedAt": "2026-02-24T06:00:00.000Z",
+    "statusDelete": "INACTIVE"
   }
 ]
