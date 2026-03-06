@@ -1,6 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsEnum, IsString, IsArray, IsOptional } from "class-validator";
 import { projectStatus } from "@/common/tasks.interface";
+import { Transform } from "class-transformer";
 
 export class UpdateProjectDto {
   @IsString()
@@ -20,8 +21,16 @@ export class UpdateProjectDto {
 
   @IsEnum(projectStatus)
   @IsOptional()
-  @ApiProperty({ example: "Planning", required: false })
-  status?: projectStatus;
+  @Transform(({ value }) => {
+    const map: Record<string, projectStatus> = {
+      planning: projectStatus.Planning,
+      completed: projectStatus.Completed,
+      archived: projectStatus.Archived,
+    };
+    return map[String(value).toLowerCase()] ?? value;
+  })
+  @ApiProperty({ example: "Planning" })
+  status!: projectStatus;
 
   @IsArray()
   @IsOptional()

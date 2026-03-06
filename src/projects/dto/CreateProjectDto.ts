@@ -1,8 +1,6 @@
-import {
-  projectStatus,
-  Type,
-} from "@/common/tasks.interface";
+import { projectStatus, Type } from "@/common/tasks.interface";
 import { ApiProperty } from "@nestjs/swagger";
+import { Transform } from "class-transformer";
 import {
   IsEnum,
   IsString,
@@ -34,6 +32,14 @@ export class CreateProjectDto {
 
   @IsNotEmpty()
   @IsEnum(projectStatus)
+  @Transform(({ value }) => {
+    const map: Record<string, projectStatus> = {
+      planning: projectStatus.Planning,
+      completed: projectStatus.Completed,
+      archived: projectStatus.Archived,
+    };
+    return map[String(value).toLowerCase()] ?? value;
+  })
   @ApiProperty({ example: "Planning" })
   status!: projectStatus;
 
@@ -49,6 +55,6 @@ export class CreateProjectDto {
 
   @IsArray()
   @IsOptional()
-  @ApiProperty({example: ["task_1708730000000_abcd123"]})
+  @ApiProperty({ example: ["task_1708730000000_abcd123"] })
   taskIds?: string[];
 }
