@@ -37,4 +37,8 @@ export class ProjectEntities implements ProjectData {
       data.taskIds ?? [],
     );
   }
+
+   public toggleDelete(): void{
+        this.statusDelete = this.statusDelete === "ACTIVE" ? "INACTIVE" : "ACTIVE";
+    }
 }
