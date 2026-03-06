@@ -5,6 +5,8 @@ import { UpdateProjectDto } from "./dto/UpdateProjectDto";
 import { ProjectData, Type } from "@/common/tasks.interface";
 import { ProjectEntities } from "@/common/projects.entities";
 import { TasksService } from "@/tasks/tasks.service";
+import * as fs from "fs";
+import * as path from "path";
 
 @Injectable()
 export class ProjectsService {
@@ -22,11 +24,13 @@ export class ProjectsService {
         new Date(pj.createdAt),
         new Date(pj.updatedAt),
         pj.statusDelete,
-        pj.taskId,
+        pj.taskIds,
       ),
   );
 
   constructor(private readonly taskService: TasksService) {}
+
+  private readonly filePath = path.join(__dirname, "../data/project.json");
 
   getAllProjects(): ProjectData[] {
     return this.projects.filter((pj) => pj.statusDelete === "ACTIVE");
@@ -47,9 +51,63 @@ export class ProjectsService {
     return { ...projectAdd, subTasks };
   }
 
-  createProject(createProjectDto: CreateProjectDto) {}
+  createProject(createProjectDto: CreateProjectDto): ProjectData {
+    const newId =
+      this.projects.length > 0
+        ? Math.max(...this.projects.map((p) => p.id)) + 1
+        : 1;
 
-  updateProject(id: number, updateProjectDto: UpdateProjectDto) {}
+    const newProject = ProjectEntities.create({
+      ...createProjectDto,
+      id: newId,
+      startAt: new Date(createProjectDto.startAt),
+      deadline: new Date(createProjectDto.deadline),
+      updatedAt: new Date(),
+      createdAt: new Date(),
+    });
 
-  deleteProject(id: number) {}
+    this.projects.push(newProject);
+    this.saveToFile();
+
+    return newProject;
+  }
+
+  updateProject(id: number, updateProjectDto: UpdateProjectDto): ProjectData {
+    const project = this.projects.find(
+      (p) => p.id === id && p.statusDelete === "ACTIVE",
+    );
+
+    if (!project) {
+      throw new NotFoundException("Project Not Found");
+    }
+
+    Object.assign(project, {
+      ...updateProjectDto,
+      updatedAt: new Date(),
+    });
+
+    this.saveToFile();
+    return project;
+  }
+
+  deleteProject(id: number) {
+    const project = this.projects.find((p) => p.id === id);
+
+    if (!project) {
+      throw new NotFoundException("Project Not Found");
+    }
+
+    if (project.statusDelete === "INACTIVE") {
+      throw new NotFoundException("Project already inactive");
+    }
+
+    project.statusDelete = "INACTIVE";
+    project.updatedAt = new Date();
+    this.saveToFile();
+    return project;
+  }
+
+  private saveToFile(): void {
+    fs.writeFileSync(this.filePath, JSON.stringify(this.projects, null, 2));
+  }
 }
