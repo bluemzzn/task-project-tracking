@@ -46,7 +46,7 @@ export class CreateProjectDto {
   @IsString()
   @IsNotEmpty()
   @ApiProperty({ example: "2024-01-15T08:00:00.000Z" })
-  startAt!: string;
+  startDate!: string;
 
   @IsString()
   @IsNotEmpty()

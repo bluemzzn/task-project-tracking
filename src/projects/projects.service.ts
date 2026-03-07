@@ -19,7 +19,7 @@ export class ProjectsService {
         pj.title,
         pj.description,
         pj.status,
-        new Date(pj.startAt),
+        new Date(pj.startDate),
         new Date(pj.deadline),
         new Date(pj.createdAt),
         new Date(pj.updatedAt),
@@ -60,7 +60,7 @@ export class ProjectsService {
     const newProject = ProjectEntities.create({
       ...createProjectDto,
       id: newId,
-      startAt: new Date(createProjectDto.startAt),
+      startDate: new Date(createProjectDto.startDate),
       deadline: new Date(createProjectDto.deadline),
       updatedAt: new Date(),
       createdAt: new Date(),
@@ -82,9 +82,11 @@ export class ProjectsService {
     }
 
     Object.assign(project, {
-      ...updateProjectDto,
-      updatedAt: new Date(),
-    });
+    ...updateProjectDto,
+    ...(updateProjectDto.startDate && { startDate: new Date(updateProjectDto.startDate) }),
+    ...(updateProjectDto.deadline && { deadline: new Date(updateProjectDto.deadline) }),
+    updatedAt: new Date(),
+  });
 
     this.saveToFile();
     return project;

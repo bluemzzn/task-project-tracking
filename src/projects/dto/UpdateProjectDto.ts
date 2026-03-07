@@ -32,6 +32,16 @@ export class UpdateProjectDto {
   @ApiProperty({ example: "Planning" })
   status!: projectStatus;
 
+  @IsString()
+  @IsOptional()
+  @ApiProperty({ example: "2024-01-15T08:00:00.000Z" })
+  startDate!: string;
+
+  @IsString()
+  @IsOptional()
+  @ApiProperty({ example: "2024-06-30T17:00:00.000Z" })
+  deadline!: string;
+
   @IsArray()
   @IsOptional()
   @ApiProperty({ example: ["task_1708730000000_abcd123"], required: false })
