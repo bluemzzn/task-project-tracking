@@ -90,6 +90,23 @@ export class ProjectsService {
     return project;
   }
 
+  recoveryProject(id: number): ProjectData {
+    const project = this.projects.find((p) => p.id === id);
+
+    if (!project) {
+      throw new NotFoundException("Project Not Found");
+    }
+
+    if (project.statusDelete !== "INACTIVE") {
+      throw new NotFoundException("Project is not deleted");
+    }
+
+    project.statusDelete = "ACTIVE";
+    project.updatedAt = new Date();
+    this.saveToFile();
+    return project;
+  }
+
   deleteProject(id: number) {
     const project = this.projects.find((p) => p.id === id);
 

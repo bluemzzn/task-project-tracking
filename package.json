@@ -19,12 +19,26 @@
       "studentId": "68010852"
     }
   ],
+  "contributors 3": [
+    {
+      "fullname": "Pimlada Patiphatpatawee",
+      "username": "mandyint",
+      "studentId": "68010792"
+    }
+  ],
+  "contributors 4": [
+    {
+      "fullname": "Phanuphong Kuharungkitcharoen",
+      "username": "austinGH22",
+      "studentId": "68010859"
+    }
+  ],
   "project": {
     "model": {
       "id": 4,
       "name": "Task & Project Tracking"
     },
-    "sumStudentId": null
+    "sumStudentId": "272044124"
   },
   "scripts": {
     "build": "nest build",
