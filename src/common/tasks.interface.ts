@@ -36,7 +36,7 @@ export interface ProjectData {
   title: string;
   description: string;
   status: projectStatus;
-  startAt: Date;
+  startDate: Date;
   deadline: Date;
   createdAt : Date;
   updatedAt : Date;
