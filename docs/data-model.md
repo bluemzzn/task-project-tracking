@@ -49,8 +49,7 @@
 เพื่อให้ข้อมูลเป็นมาตรฐานเดียวกัน ระบบมีการใช้ Enum ดังนี้:
 - **Type**: `TASKS`, `PROJECT`
 - **projectStatus**: `PLANNING`, `COMPLETED`, `ARCHIVED`
-- **Status (Task)**: `DONE`, `IN_PROGRESS`
-- **Priority**: `LOW`, `MEDIUM`, `HIGH`
+
 
 ### 3.2 Relationships
 - **Association (1:N)**: `Projects Service` มีความสัมพันธ์กับ `Tasks Service` แบบ **1 ต่อ 0..*** (หนึ่งโปรเจคประกอบด้วยหลายงาน หรือไม่มีเลยก็ได้) โดยเชื่อมโยงผ่าน `taskIds`
