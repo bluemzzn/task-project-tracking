@@ -82,7 +82,7 @@ task-project-nestjs/
 └── tsconfig.json
 ```
 
-##Documentations
+## Documentations
 Project documentation can be found in the `docs/` directory:
 
 - [API Specification](docs/api-specification.md)
