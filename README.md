@@ -85,6 +85,6 @@ task-project-nestjs/
 ##Documentations
 Project documentation can be found in the `docs/` directory:
 
-[API Specification](docs/api-specification.md)
-[Data Model](docs/data-model.md)
-[UML Diagram](docs/UML-Diagram.png)
+- [API Specification](docs/api-specification.md)
+- [Data Model](docs/data-model.md)
+- [UML Diagram](docs/UML-Diagram.png)
