@@ -2,8 +2,6 @@
 
 เอกสารระบุรายละเอียดทางเทคนิคของ REST API ทั้งหมดในระบบ Task-Project Tracking พัฒนาด้วย NestJS
 
----![alt text](image.png)
-
 ## 1. Project Management Endpoints (`/projects`)
 
 ### 1.1 Get All Projects
