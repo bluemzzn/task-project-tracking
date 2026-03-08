@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Patch, Delete, Body, Param, Query } from "@nestjs/common";
+import { Controller, Get, Post, Patch, Delete, Body, Param, Query, ValidationPipe } from "@nestjs/common";
 import { TasksService } from "./tasks.service";
 import { TasksData } from "../common/tasks.interface";
 import { CreateTaskDto } from "./dto/create-task.dto";
@@ -9,7 +9,7 @@ export class TasksController {
     constructor(private readonly tasksService: TasksService) {}
 
     @Post()
-    createTask(@Body() data: CreateTaskDto) {
+    createTask(@Body(ValidationPipe) data: CreateTaskDto) {
     return this.tasksService.createTask(data);
     }
 
@@ -30,7 +30,7 @@ export class TasksController {
 
     @Patch()
     updateField(
-    @Body() tasksData: { id: string; data: Partial<TasksData> }[]
+    @Body(ValidationPipe) tasksData: { id: string; data: Partial<TasksData> }[]
     ) {
     return this.tasksService.updateField(tasksData);
     }

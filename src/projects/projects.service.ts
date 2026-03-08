@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import projectDataJson from "../data/project.json";
 import { CreateProjectDto } from "./dto/CreateProjectDto";
 import { UpdateProjectDto } from "./dto/UpdateProjectDto";
@@ -100,7 +100,7 @@ export class ProjectsService {
     }
 
     if (project.statusDelete !== "INACTIVE") {
-      throw new NotFoundException("Project is not deleted");
+      throw new BadRequestException("Project is not deleted");
     }
 
     project.statusDelete = "ACTIVE";
@@ -117,7 +117,7 @@ export class ProjectsService {
     }
 
     if (project.statusDelete === "INACTIVE") {
-      throw new NotFoundException("Project already inactive");
+      throw new BadRequestException("Project already inactive");
     }
 
     project.statusDelete = "INACTIVE";

@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { Task } from "./tasks.model";
 import { TasksData } from "../common/tasks.interface";
 import dataFile from "../data/data.json";
@@ -104,7 +104,7 @@ export class TasksService {
         }
 
         if (task.statusDelete === "INACTIVE") {
-            throw new NotFoundException("Task already inactive");
+            throw new BadRequestException("Task already inactive");
         }
 
         task.toggleDelete();
@@ -120,7 +120,7 @@ export class TasksService {
         }
 
         if (task.statusDelete !== "INACTIVE") {
-            throw new NotFoundException("Task is not deleted");
+            throw new BadRequestException("Task is not deleted");
         }
 
         task.toggleDelete();
