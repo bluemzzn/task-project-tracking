@@ -1,3 +1,5 @@
+## Project Overview
+
 ## Technology Stack 
 
 - NestJS
@@ -15,7 +17,12 @@ Second, run the development server
 ```
 npm run start
 ```
+
 Open http://localhost:3000 with your Thunder Client or Postman to see the result
+
+OR
+
+Open http://localhost:3000/api to see API Documentation (Swagger)
 
 ## Project Struture
 
@@ -61,12 +68,8 @@ task-project-nestjs/
 │   └── submission.md
 ├── test/
 ├── .eslintrc.js
-├── .gitignore
-├── Guide.md
-├── LICENSE
 ├── nest-cli.json
 ├── package.json
-├── package-lock.json
 ├── README.md
 └── tsconfig.json
 ```
