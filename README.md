@@ -1,14 +1,11 @@
 ## Project Overview
 
 This project is a Task-Project Tracking API developed using NestJS to manage projects and their associated tasks. The system is designed following the principles of Object-Oriented Programming (OOP) and adopts a modular architecture consistent with NestJS best practices.
-
 The application provides RESTful API endpoints that allow users to create, update, retrieve, and manage project and task information. Additionally, the system integrates Swagger API documentation, enabling developers to easily explore and test the available endpoints through an interactive interface.
 Instead of using a traditional database, the system utilizes file-based storage (JSON) to store project and task data. This approach simplifies development and is suitable for lightweight applications or educational purposes. The system also implements Data Transfer Objects (DTOs) to validate and control incoming request data, ensuring data consistency and integrity.
-
 The core data models of the system include:
 ProjectData — Represents the main project entity and stores project-related information.
 TasksData — Represents individual tasks that belong to a project or it can be a standalone task too.
-
 Each project can contain multiple tasks, and the relationship between projects and tasks is maintained through the taskIds field within the project data structure.
 
 ## Technology Stack 
@@ -35,7 +32,7 @@ OR
 
 Open http://localhost:3000/api to see API Documentation (Swagger)
 
-## Project Struture
+## Project Structure
 
 ```
 task-project-nestjs/
