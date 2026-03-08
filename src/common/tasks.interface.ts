@@ -9,9 +9,9 @@ export enum Status {
 }
 
 export enum projectStatus {
-  Planning = "Planning",
-  Completed = "Completed",
-  Archived = "Archived",
+  PLANNING = "Planning",
+  COMPLETED = "Completed",
+  ARCHIVED = "Archived",
 }
 
 export interface TasksData{

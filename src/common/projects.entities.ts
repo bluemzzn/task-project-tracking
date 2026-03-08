@@ -28,7 +28,7 @@ export class ProjectEntities implements ProjectData {
       data.id || 0,
       data.title || "",
       data.description || "",
-      data.status || projectStatus.Planning,
+      data.status || projectStatus.PLANNING,
       data.startDate ?? now,
       data.deadline ?? now,
       data.createdAt ?? now,

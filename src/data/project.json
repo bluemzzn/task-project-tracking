@@ -80,5 +80,19 @@
     "taskIds": [
       "task_1772814392000_61vtthk"
     ]
+  },
+  {
+    "type": "projects",
+    "name": "John Doe",
+    "id": 6,
+    "title": "Task Management",
+    "description": "Implement login with JWT",
+    "status": "Planning",
+    "startDate": "2024-01-15T08:00:00.000Z",
+    "deadline": "2024-06-30T17:00:00.000Z",
+    "createdAt": "2026-03-07T17:23:36.813Z",
+    "updatedAt": "2026-03-07T17:23:36.813Z",
+    "statusDelete": "ACTIVE",
+    "taskIds": []
   }
 ]

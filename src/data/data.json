@@ -1,6 +1,5 @@
 [
   {
-    "id": "task_1708730000000_abcd123",
     "name": "Setup Backend",
     "title": "Initialize NestJS Project",
     "description": "Create project structure and configure modules",
@@ -11,10 +10,10 @@
     "status": "DONE",
     "startedAt": "2026-02-20T09:00:00.000Z",
     "updatedAt": "2026-02-22T10:00:00.000Z",
-    "statusDelete": "ACTIVE"
+    "statusDelete": "ACTIVE",
+    "id": "task_1708730000000_abcd123"
   },
   {
-    "id": "task_1708730000001_efgh456",
     "name": "Implement Task Model",
     "title": "Create Task Class",
     "description": "Define properties and business logic",
@@ -25,10 +24,10 @@
     "status": "IN_PROGRESS",
     "startedAt": "2026-02-21T09:00:00.000Z",
     "updatedAt": "2026-02-23T12:00:00.000Z",
-    "statusDelete": "ACTIVE"
+    "statusDelete": "ACTIVE",
+    "id": "task_1708730000001_efgh456"
   },
   {
-    "id": "task_1708730000002_ijkl789",
     "name": "Add JSON Persistence",
     "title": "File System Storage",
     "description": "Save and load tasks from JSON file",
@@ -39,10 +38,10 @@
     "status": "IN_PROGRESS",
     "startedAt": "2026-02-22T09:00:00.000Z",
     "updatedAt": "2026-02-24T08:00:00.000Z",
-    "statusDelete": "ACTIVE"
+    "statusDelete": "ACTIVE",
+    "id": "task_1708730000002_ijkl789"
   },
   {
-    "id": "task_1708730000003_mnop321",
     "name": "Write API Controller",
     "title": "Create REST Endpoints",
     "description": "Implement CRUD endpoints for tasks",
@@ -53,10 +52,10 @@
     "status": "DONE",
     "startedAt": "2026-02-23T09:00:00.000Z",
     "updatedAt": "2026-02-24T07:00:00.000Z",
-    "statusDelete": "ACTIVE"
+    "statusDelete": "ACTIVE",
+    "id": "task_1708730000003_mnop321"
   },
   {
-    "id": "task_1708730000004_qrst654",
     "name": "Refactor Service Logic",
     "title": "Improve Code Cleanliness",
     "description": "Reduce duplication and improve structure",
@@ -67,10 +66,10 @@
     "status": "IN_PROGRESS",
     "startedAt": "2026-02-20T09:00:00.000Z",
     "updatedAt": "2026-02-24T06:00:00.000Z",
-    "statusDelete": "INACTIVE"
+    "statusDelete": "INACTIVE",
+    "id": "task_1708730000004_qrst654"
   },
   {
-    "id": "task_1772813695656_g4jvo5f",
     "name": "Test",
     "title": "sdfsdf",
     "description": "This is the test one",
@@ -81,6 +80,91 @@
     "status": "IN_PROGRESS",
     "startedAt": "2026-02-20T09:00:00.000Z",
     "updatedAt": "2026-02-24T06:00:00.000Z",
-    "statusDelete": "INACTIVE"
+    "statusDelete": "INACTIVE",
+    "id": "task_1772813695656_g4jvo5f"
+  },
+  {
+    "name": "",
+    "title": "Task Test",
+    "description": "Test task",
+    "priority": "LOW",
+    "startDate": "1970-01-01T00:00:00.000Z",
+    "deadline": "1970-01-01T00:00:00.000Z",
+    "estimatedHours": 0,
+    "status": "IN_PROGRESS",
+    "startedAt": "2026-03-07T16:51:13.274Z",
+    "updatedAt": "2026-03-07T16:51:13.274Z",
+    "statusDelete": "ACTIVE",
+    "id": "task_1772902273274_peccr0q"
+  },
+  {
+    "name": "Build Auth Module",
+    "title": "Authentication System",
+    "description": "Test task",
+    "priority": "LOW",
+    "startDate": "2026-02-24T09:00:00.000Z",
+    "deadline": "2026-02-28T18:00:00.000Z",
+    "estimatedHours": 12,
+    "status": "IN_PROGRESS",
+    "startedAt": "2026-03-07T17:04:01.677Z",
+    "updatedAt": "2026-03-07T17:04:01.677Z",
+    "statusDelete": "ACTIVE",
+    "id": "task_1772903041677_3s6axcs"
+  },
+  {
+    "name": "Build Auth Module",
+    "title": "Authentication System",
+    "description": "Test task",
+    "priority": "LOW",
+    "startDate": "2026-02-24T09:00:00.000Z",
+    "deadline": "2026-02-28T18:00:00.000Z",
+    "estimatedHours": 12,
+    "status": "IN_PROGRESS",
+    "startedAt": "2026-03-07T17:08:56.317Z",
+    "updatedAt": "2026-03-07T17:08:56.317Z",
+    "statusDelete": "ACTIVE",
+    "id": "task_1772903336317_zpenqaf"
+  },
+  {
+    "name": "Build Auth Module",
+    "title": "Authentication System",
+    "description": "Test task",
+    "priority": "LOW",
+    "startDate": "2026-02-24T09:00:00.000Z",
+    "deadline": "2026-02-28T18:00:00.000Z",
+    "estimatedHours": 12,
+    "status": "IN_PROGRESS",
+    "startedAt": "2026-03-07T17:11:18.440Z",
+    "updatedAt": "2026-03-07T17:11:18.440Z",
+    "statusDelete": "ACTIVE",
+    "id": "task_1772903478440_mmhaikf"
+  },
+  {
+    "name": "Build Auth Module",
+    "title": "Authentication System",
+    "description": "Test task",
+    "priority": "LOW",
+    "startDate": "2026-02-24T09:00:00.000Z",
+    "deadline": "2026-02-28T18:00:00.000Z",
+    "estimatedHours": 12,
+    "status": "IN_PROGRESS",
+    "startedAt": "2026-03-07T17:20:21.440Z",
+    "updatedAt": "2026-03-07T17:20:21.440Z",
+    "statusDelete": "ACTIVE",
+    "id": "task_1772904021440_i2i8ye9"
+  },
+  {
+    "name": "Build Auth Module",
+    "title": "Authentication System",
+    "description": "Test task",
+    "priority": "LOW",
+    "startDate": "2026-02-24T09:00:00.000Z",
+    "deadline": "2026-02-28T18:00:00.000Z",
+    "estimatedHours": 12,
+    "status": "IN_PROGRESS",
+    "startedAt": "2026-03-07T17:23:53.726Z",
+    "updatedAt": "2026-03-07T17:23:53.726Z",
+    "statusDelete": "ACTIVE",
+    "id": "task_1772904233726_hr7dmtr"
   }
 ]
