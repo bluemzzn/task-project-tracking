@@ -11,6 +11,16 @@ TasksData — Represents individual tasks that belong to a project or it can be 
 
 Each project can contain multiple tasks, and the relationship between projects and tasks is maintained through the taskIds field within the project data structure.
 
+## Contributors
+
+
+| Name | GitHub Name | Student ID |
+|------|-------------|------------|
+| กุลจิรา นามใจ | bluemzzn | 68011621 |
+| ภัสราภรณ์ ผดุงศิลป์ | patsaporn-phadungsil | 68010852 |
+| พิมพ์ลดา ปฏิพัทธ์ปถวี | mandyint | 68010792 |
+| ภานุพงศ์ คูหารุ่งกิจเจริญ | AustinGH22 | 68010859 |
+
 ## Technology Stack 
 
 - NestJS
