@@ -23,9 +23,9 @@ export class UpdateProjectDto {
   @IsOptional()
   @Transform(({ value }) => {
     const map: Record<string, projectStatus> = {
-      planning: projectStatus.Planning,
-      completed: projectStatus.Completed,
-      archived: projectStatus.Archived,
+      planning: projectStatus.PLANNING,
+      completed: projectStatus.COMPLETED,
+      archived: projectStatus.ARCHIVED,
     };
     return map[String(value).toLowerCase()] ?? value;
   })

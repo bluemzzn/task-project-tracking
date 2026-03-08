@@ -2,11 +2,11 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import { AppModule } from './../src/app.module';
-import { ProjectData, Type } from "./../src/common/tasks.interface";
-import { ProjectEntities } from "./../src/common/projects.entities";
+
 
 describe('Project API (e2e)', () => {
   let app: INestApplication;
+  let projectId: string;
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -21,11 +21,11 @@ describe('Project API (e2e)', () => {
     await app.close();
   });
 
-  it('/projects (POST) create project', () => {
-    return request(app.getHttpServer())
+  it('/projects (POST) create project', async () => {
+    const res = await request(app.getHttpServer())
       .post('/projects')
       .send({
-        type: 'projects',
+        type: 'projects',   
         name: 'John Doe',
         title: 'Task Management',
         description: 'Implement login with JWT',
@@ -35,12 +35,37 @@ describe('Project API (e2e)', () => {
         taskIds: []
       })
       .expect(201);
+
+        projectId = res.body.id;
+
+        expect(projectId).toBeDefined();
   });
 
-  it('/projects (GET) get all projects', () => {
-    return request(app.getHttpServer())
+  it('/projects (GET) get all projects', async () => {
+    const res = await request(app.getHttpServer())
       .get('/projects')
       .expect(200);
+
+    expect(Array.isArray(res.body)).toBe(true);
+  });
+
+  it('/projects/:id (PATCH) update project', async () => {
+    const res = await request(app.getHttpServer())
+      .patch(`/projects/${projectId}`)
+      .send({
+        title: 'Updated Project Title'
+      })
+      .expect(200);
+
+    expect(res.body.title).toBe('Updated Project Title');
+  });
+
+  it('/projects/:id (DELETE) delete project', async () => {
+    const res = await request(app.getHttpServer())
+      .delete(`/projects/${projectId}`)
+      .expect(200);
+
+    expect(res.body.id).toBe(projectId);
   });
 
 });

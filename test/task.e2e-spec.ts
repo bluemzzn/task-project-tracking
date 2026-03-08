@@ -2,10 +2,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import { AppModule } from './../src/app.module';
-import { ProjectData, Type } from "./../src/common/tasks.interface";
-import { ProjectEntities } from "./../src/common/projects.entities";
+
 describe('Task API (e2e)', () => {
   let app: INestApplication;
+  let taskId: string;
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -20,8 +20,8 @@ describe('Task API (e2e)', () => {
     await app.close();
   });
 
-  it('/tasks (POST) create task', () => {
-    return request(app.getHttpServer())
+  it('/tasks (POST) create task', async () => {
+    const res = await request(app.getHttpServer())
       .post('/tasks')
       .send({
         name: 'Build Auth Module',
@@ -33,12 +33,42 @@ describe('Task API (e2e)', () => {
         estimatedHours: 12
       })
       .expect(201);
+
+    taskId = res.body.id;
+
+    expect(taskId).toBeDefined();
   });
 
-  it('/tasks (GET) get all tasks', () => {
-    return request(app.getHttpServer())
+  it('/tasks (GET) get all tasks', async () => {
+    const res = await request(app.getHttpServer())
       .get('/tasks')
       .expect(200);
+
+    expect(Array.isArray(res.body)).toBe(true);
+  });
+
+ it('/tasks (PATCH) update task', async () => {
+    const res = await request(app.getHttpServer())
+      .patch('/tasks')
+      .send([
+        {
+          id: taskId,
+          data: {
+            title: 'Updated Authentication System'
+          }
+        }
+      ])
+      .expect(200);
+
+    expect(res.body[0].title).toBe('Updated Authentication System');
+  });
+
+  it('/tasks/:id (DELETE) delete task', async () => {
+    const res = await request(app.getHttpServer())
+      .delete(`/tasks/${taskId}`)
+      .expect(200);
+
+    expect(res.body.id).toBe(taskId);
   });
 
 });
