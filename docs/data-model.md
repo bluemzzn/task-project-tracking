@@ -52,7 +52,7 @@
 - **Status (Project)**: `DONE`, `IN_PROGRESS`
 
 ### 3.2 Relationships
-- **Aggregation (1:N)**: `Projects Service` มีความสัมพันธ์กับ `Tasks Service` แบบ **1 ต่อ 0..*** (หนึ่งโปรเจคประกอบด้วยหลายงาน หรือไม่มีเลยก็ได้) โดยเชื่อมโยงผ่าน `taskIds`
+- **Aggregation (1:N)**: `Projects Service` มีความสัมพันธ์กับ `Tasks Service` แบบ one to many (หนึ่ง project ประกอบด้วยหลาย task หรือไม่มีเลยก็ได้) โดยเชื่อมโยงผ่าน `taskIds`
 
 ---
 
